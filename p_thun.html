@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-01</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <!--Navigation bar-->
+      <div id="nav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#nav-placeholder").load("side-nav.html");
+      });
+      </script>
+    <!--end of Navigation bar-->
+
+    <!--Portnav bar-->
+      <div id="portnav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#portnav-placeholder").load("port-nav.html");
+      });
+      </script>
+    <!--end of Portnav bar-->
+
+    <div class="portnav-top">
+      <span class="portnav-info">N-01</span>
+      <span class="portnav-info">2020</span>
+      <span class="portnav-info">Kunstmuseum Thun</span>
+      <span class="portnav-info">Folding Enterprises</span>
+    </div>
+
+    <div id="thun-text" class="project-text">
+
+      <button class="project-text-close" onclick="showText()">
+        <svg height="30px" width="30px" viewBox="0 0 30 30">
+        <line x1="10" y1="10" x2="20" y2="20"/>
+        <line x1="10" y1="20" x2="20" y2="10"/>
+      </svg>
+    </button>
+      
+      <p>
+        This latest installation seeks to expand on previous “switch” concepts by multiplying and interlinking them to form a network. While moving through the exhibit the user initiates a series of chain reactions that can cause unforeseen events in nearby spaces. Turning a glass volume in one gallery will move a wall section or turn a louver in an adjacent space. These compound actions change circulation, views, and light levels in the many galleries of the museum.
+        <br>
+        <br>
+        Taking over several gallery rooms, the project comprises a series of architectural instruments that visitors manipulate in order to modify the architecture of adjoining spaces—a pivoting door slides a wall, a rotating column opens a window, while a door handle pivots a wall in a darkened room to reveal large facade windows overlooking the Aare river. In the latter case, the daylight that gradually floods into the gallery rooms turns glass surfaces from transparent to reflective, which in turn opens unexpected sight lines and produces ricocheting reflections. This kind of chain reaction both disorients and elucidates the visitors’ spatial experience, constantly demanding the recalibration of their perception of the gallery rooms. Moreover, as walls retract and windows open, the mechanical devices that make these movements possible are periodically revealed, momentarily lifting the curtain on the artwork’s inner workings.
+      </p>
+    </div>
+
+    <div class="slideshow-container">
+    
+      <div class="Slides fade">
+        <div class="numbertext">1 / 6</div>
+        <img class="portimg" src="/images/FE_N-01/FE_N-01_01.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">2 / 6</div>
+        <img class="portimg" src="/images/FE_N-01/FE_N-01_02.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">3 / 6</div>
+        <img class="portimg" src="/images/FE_N-01/FE_N-01_03.png"/>
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">4 / 6</div>
+        <img class="portimg" src="/images/FE_N-01/FE_N-01_04.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">5 / 6</div>
+        <img class="portimg" src="/images/FE_N-01/FE_N-01_05.png">
+      </div>
+
+    </div>
+
+    <script>
+      //Make the DIV element draggagle:
+      dragElement(document.getElementById("thun-text"));
+      
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+      
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+      
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+      
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+      </script>
+
+    <script>
+      /* click-thru slideshow */
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Slides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+<!---->
+      <script>
+        function showText() {
+          var x = document.getElementById("thun-text");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+          var element = document.getElementById("i-symbol");
+          element.classList.toggle("portnav-i-symbol-clicked");
+        }
+      </script>
+
+  </body>
+
+</html>
+  

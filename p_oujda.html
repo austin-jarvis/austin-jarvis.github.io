@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oujda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <!--Navigation bar-->
+      <div id="nav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#nav-placeholder").load("side-nav.html");
+      });
+      </script>
+    <!--end of Navigation bar-->
+
+    <!--Portnav bar-->
+      <div id="portnav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#portnav-placeholder").load("port-nav.html");
+      });
+      </script>
+    <!--end of Portnav bar-->
+
+    <div class="portnav-top">
+      <span class="portnav-info">Stade d'Oujda</span>
+      <span class="portnav-info">2016</span>
+      <span class="portnav-info">Oujda, Morocco</span>
+      <span class="portnav-info">WW Architecture</span>
+    </div>
+
+    <div id="thun-text" class="project-text">
+
+      <button class="project-text-close" onclick="showText()">
+        <svg height="30px" width="30px" viewBox="0 0 30 30">
+        <line x1="10" y1="10" x2="20" y2="20"/>
+        <line x1="10" y1="20" x2="20" y2="10"/>
+      </svg>
+    </button>
+      
+      <p>
+        A soccer club in an isolated Moroccan city. A stadium in the wild. Two scales overlapping - the camaraderie of sport in the vastness of a desert landscape. The contrast between these two scales is not resolved, no, it is left exposed so that each may enhance the other. For the stadium and desert to intermingle a horizontal slot is opened in the middle of the stands, creating an upper and lower bowl. This void takes on various identities: a portal; a window; a meeting place; a viewing platform; a promenade; a landform.
+        <br>
+        <br>
+        The network of infrastructure around the stadium is composed of several micro-landscapes. The act of approach is punctuated with many instances of arrival. Parking, streets, gardens, pavilions, fields, and theaters nest into one another. The greater site provides all scales of event space so that the grounds will be equally animated between matches as when the stadium is filled. The base of the stadium is sliced by wide entry points to allow views and activity to bleed between the event and its context.
+        <br>
+        <br>
+        This room for 45,000 people is in constant flux: a floating object from afar; a room with a view from within. A gathering space in the desert. A line on the horizon.        
+
+      </p>
+    </div>
+
+    <div class="slideshow-container">
+    
+      <div class="Slides fade">
+        <div class="numbertext">1 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/2016-06-07 - FAR.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">2 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/2016-06-07 - MEDIUM 01.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">3 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/2016-06-07 - NEARER 01.png"/>
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">4 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/2016-06-07 - RIM 02.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">5 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/2016-06-09 - BOWL.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">6 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/oujda_diptych.jpg">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">7 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/PERSPECTIVE BIRDS EYE_3.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">8 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/plans.gif">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">9 / 9</div>
+        <img class="portimg" src="/images/WW_Oujda/SITE PLAN-02.png">
+      </div>
+
+    </div>
+
+    <script>
+      //Make the DIV element draggagle:
+      dragElement(document.getElementById("thun-text"));
+      
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+      
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+      
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+      
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+      </script>
+
+    <script>
+      /* click-thru slideshow */
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Slides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+<!---->
+      <script>
+        function showText() {
+          var x = document.getElementById("thun-text");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+          var element = document.getElementById("i-symbol");
+          element.classList.toggle("portnav-i-symbol-clicked");
+        }
+      </script>
+
+  </body>
+
+</html>
+  

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaihui</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <!--Navigation bar-->
+      <div id="nav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#nav-placeholder").load("side-nav.html");
+      });
+      </script>
+    <!--end of Navigation bar-->
+
+    <!--Portnav bar-->
+      <div id="portnav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#portnav-placeholder").load("port-nav.html");
+      });
+      </script>
+    <!--end of Portnav bar-->
+
+    <div class="portnav-top">
+      <span class="portnav-info">Kaihui Exchange</span>
+      <span class="portnav-info">2018</span>
+      <span class="portnav-info">Changsha, Hunan Province, China</span>
+      <span class="portnav-info">WW Architecture</span>
+    </div>
+
+    <div id="thun-text" class="project-text">
+
+      <button class="project-text-close" onclick="showText()">
+        <svg height="30px" width="30px" viewBox="0 0 30 30">
+        <line x1="10" y1="10" x2="20" y2="20"/>
+        <line x1="10" y1="20" x2="20" y2="10"/>
+      </svg>
+    </button>
+      
+      <p>
+        The intended use of the Kaihui Exchange was an evasive subject at the time of commission. The client is a private developer commissioning a building that would serve public interests that were, as yet, unknown. The initial prompt was to make a building that could be a resource for the natural, cultural, and business interests of Kaihui, a town of just 19,500 in rural agrarian China. The result is a building that acts as a frame for a collage of programs - museum, office, restaurant, venue, visitor center in one form.
+        <br>
+        <br>
+        The approach in the face of this programmatic ambiguity was to morph a modernistic trope (the open floor plan) with a variety of spatial interventions (terraces and courtyards) producing a box that toed the line of inside and outside. Finishing materials and curtains are used as the primary determinant of space, and opaque walls are inserted only where absolutely necessary. The resulting architecture seeks not to predetermine its use, but instead caters to ambiguity. A collection of rooms, each of varying sizes and proportions, tentatively enclosed.
+      </p>
+    </div>
+
+    <div class="slideshow-container">
+    
+      <div class="Slides fade">
+        <div class="numbertext">1 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2017-10-28 KH - Site.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">2 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2017-10-28 KAIHUI - Entries.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">3 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2017-02-18 KH - AJ5.png"/>
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">4 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2017-02-19 KH - AJ4.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">5 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2016-02-23 KAIHUI Floors.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">6 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2017-02-20 KH - AJ3.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">7 / 7</div>
+        <img class="portimg" src="/images/WW_Kaihui/2017-10-28 KH - TOP BOT.png">
+      </div>
+
+    </div>
+
+    <script>
+      //Make the DIV element draggagle:
+      dragElement(document.getElementById("thun-text"));
+      
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+      
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+      
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+      
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+      </script>
+
+    <script>
+      /* click-thru slideshow */
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Slides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+<!---->
+      <script>
+        function showText() {
+          var x = document.getElementById("thun-text");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+          var element = document.getElementById("i-symbol");
+          element.classList.toggle("portnav-i-symbol-clicked");
+        }
+      </script>
+
+  </body>
+
+</html>
+  
