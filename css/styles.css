@@ -307,7 +307,7 @@ background: #363E4D;
     top: 0px;
     border-bottom: 1px solid var(--main-color);
     background-color: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 .portnav-info {
@@ -466,5 +466,10 @@ background: #363E4D;
 @media screen and (max-width: 620px) {
     .slideshow-container {
         margin-top: 90px;
+        margin-left: 32px;
+        padding: 0px;
+    }
+    .portimg {
+        max-width: 100%;
     }
 }
