@@ -298,6 +298,17 @@ background: #363E4D;
     margin-left: 1px;
 }
 
+.navbar-background {
+    position: fixed;
+    width: 100%;
+    margin-left: 31px;
+    height: 30px;
+    top: 0px;
+    border-right: 1px solid var(--main-color);
+    background-color: none;
+    z-index: 1;
+}
+
 .portnav-info {
     position: relative;
     display: inline-block;
@@ -388,11 +399,11 @@ background: #363E4D;
 .project-text {
     display: none;
     overflow: scroll;
+    overflow-x: hidden;
     position: absolute;
     background: white;
     border: 1px solid var(--main-color);
     padding: 30px;
-    overflow-x: hidden;
     margin-right: 30px;
     top: 90px;
     left: 90px;
