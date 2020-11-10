@@ -121,7 +121,7 @@ background: #E6E6E5;
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background: #363E4D; 
+background: var(--main-color); 
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -243,7 +243,7 @@ background: #363E4D;
     border-right: 1px solid var(--main-color);
     height: 200%;
     width: 250px;
-    z-index: 5;
+    z-index: 1;
     line-height: 20pt;
     transition: width 600ms ease;
 }
@@ -307,7 +307,7 @@ background: #363E4D;
     top: 0px;
     border-bottom: 1px solid var(--main-color);
     background-color: none;
-    z-index: 2;
+    z-index: 1;
 }
 
 .portnav-info {
@@ -463,7 +463,7 @@ background: #363E4D;
     position: inherit
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 600px) {
     .slideshow-container {
         margin-top: 90px;
         margin-left: 32px;
@@ -471,5 +471,8 @@ background: #363E4D;
     }
     .portimg {
         max-width: 100%;
+    }
+    .project-text {
+        left: 60px;
     }
 }
