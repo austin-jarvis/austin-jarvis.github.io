@@ -408,8 +408,7 @@ background: var(--main-color);
     margin-right: 30px;
     top: 90px;
     left: 90px;
-    max-width: 900px;
-    min-width: 300px;
+    max-width: 820px;
     max-height: 80%;
 }
 
@@ -474,5 +473,7 @@ background: var(--main-color);
     }
     .project-text {
         left: 60px;
+        max-width: 100%;
+        min-width: 200px;
     }
 }
