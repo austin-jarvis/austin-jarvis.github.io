@@ -298,13 +298,14 @@ background: #363E4D;
     margin-left: 1px;
 }
 
-.navbar-background {
+.portnav-background {
     position: fixed;
     width: 100%;
-    margin-left: 31px;
+    margin-left: 60px;
     height: 30px;
+    background-color: none;
     top: 0px;
-    border-right: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
     background-color: none;
     z-index: 1;
 }
