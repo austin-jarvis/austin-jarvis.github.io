@@ -287,7 +287,7 @@ background: var(--main-color);
 
 .portnav-top {
     position: fixed;
-    background: white;
+    background: none;
     left: 31px;
     top: 0px;
     color: var(--main-color);
@@ -301,9 +301,9 @@ background: var(--main-color);
 .portnav-background {
     position: fixed;
     width: 100%;
-    margin-left: 60px;
+    margin-left: 32px;
     height: 30px;
-    background-color: none;
+    background-color: white;
     top: 0px;
     border-bottom: 1px solid var(--main-color);
     background-color: none;
@@ -409,7 +409,7 @@ background: var(--main-color);
     top: 90px;
     left: 90px;
     max-width: 820px;
-    max-height: 80%;
+    max-height: 75%;
     z-index: 0;
 }
 
@@ -419,7 +419,7 @@ background: var(--main-color);
     background: white;
     height: 30px;
     width: 30px;
-    border: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
     padding: -1px;
     float: right;
