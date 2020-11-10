@@ -103,6 +103,31 @@ button {
     background-color: none;
     outline: none;
 }
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #E6E6E5; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #363E4D; 
+}
+
+::-webkit-scrollbar-track-piece {
+    border-left: 1px solid #E6E6E5
+}
+
 /* The nav menu */
 .navbar {
     position: fixed;
@@ -361,17 +386,19 @@ button {
 }
 
 .project-text {
-    column-width: 300px;
     display: none;
+    overflow: scroll;
     position: absolute;
     background: white;
     border: 1px solid var(--main-color);
     padding: 30px;
+    overflow-x: hidden;
     margin-right: 30px;
     top: 90px;
     left: 90px;
     max-width: 900px;
     min-width: 300px;
+    max-height: 80%;
 }
 
 .project-text-close {

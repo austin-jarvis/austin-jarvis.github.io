@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sha Tin</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+
+  <body>
+    <!--Navigation bar-->
+      <div id="nav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#nav-placeholder").load("side-nav.html");
+      });
+      </script>
+    <!--end of Navigation bar-->
+
+    <!--Portnav bar-->
+      <div id="portnav-placeholder"></div>
+
+      <script>
+      $(function(){
+        $("#portnav-placeholder").load("port-nav.html");
+      });
+      </script>
+    <!--end of Portnav bar-->
+
+    <div class="portnav-top">
+      <span class="portnav-info">Vertical Voids</span>
+      <span class="portnav-info">2016</span>
+      <span class="portnav-info">Sha Tin, Hong Kong</span>
+      <span class="portnav-info">Rice School of Architecture</span>
+    </div>
+
+    <div id="thun-text" class="project-text">
+
+      <button class="project-text-close" onclick="showText()">
+        <svg height="30px" width="30px" viewBox="0 0 30 30">
+        <line x1="10" y1="10" x2="20" y2="20"/>
+        <line x1="10" y1="20" x2="20" y2="10"/>
+      </svg>
+    </button>
+      
+      <p>
+        In the New Towns of Hong Kong a unique model for mass housing has shown that the urban ideology of Corbusier’s Radiant City is not only a viable model for dealing with extreme density but also an effective solution for our current environmental crisis.
+        <br>
+        <br>
+        This project begins at the outer edge of Hong Kong social housing - the legacy of the envelope. It’s deep history begins at Shei Kip Mei, the first housing estate in Hong Kong. A series of renovations at Shei Kip Mei converted the external circulation of the H-shaped housing blocks into private balconies for each family unit. These balconies quickly took on varied programs - laundry, kitchen, storage - projecting the internal, private life of the family onto the external, public face of the building. This projection has endured and become a fixture of life in public housing estates. At the newly developed estates in the outer territories of Hong Kong the most reliable signs of life are the clotheslines cantilevering from unit windows: thirty stories in the air, socks waving on the tropical breeze.
+        <br>
+        <br>
+        And when one does this - visits a new housing estate - one of the most evident features of Hong Kong's recent housing projects is their extreme verticality. This isn't just tallness - it's a plastic feature, a product of building codes which dictate that natural light must be provided to bedrooms, kitchens, and bathrooms in every unit. To accommodate this requirement local architects are folding buildings' facades inwards to craft immense light wells which produce vertical striations repeated across the domestic skyline.
+        <br>
+        <br>
+        As a response to the convergence of these two trends, this project considers how the aspects of private life evident on a buildingís facade can begin to occupy the newly contrived space of the housing light well, linking private life with public expression, projecting the interior onto the exterior through the reintroduction of the balcony.
+        <br>
+        <br>
+        The operative granule of my housing design is not just the private unit, but the space between units. My method for operating on this space is based on a system that increases the envelope area of each unit. Whereas the typical western apartment block is based on the aggregation of rectilinear cells, I use a template of two overlapping cells to create variable types. These units are linearly sequenced according to void adjacencies and unit size to produce corridors. This sequencing produces a number of visual and circulatory effects. Corridor types are stacked, mirrored, and shifted, expressing a range of visual autonomy for the unit: on one end of the spectrum, a unified housing block composed of many units (reminiscent of contemporary Hong Kong housing) and on the other the individual cell.
+        <br>
+        <br>
+        These two diaphanous volumes mediate the section of the bridge, extending both above and below the concrete slab. Each box is composed entirely of glass and appears to float within the concrete slab. When standing in the right place, a viewer will see through a hole in the bridge, but elsewhere a periscopic reflection of the enveloping glass will overlay up, down, above, below, sky, and ground.
+      </p>
+    </div>
+
+    <div class="slideshow-container">
+    
+      <div class="Slides fade">
+        <div class="numbertext">1 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/siteplan_render.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">2 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/site plan 1-1000-01.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">3 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/process-02.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">4 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/160330_post-mid boards-18.png"/>
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">5 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/process-03.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">6 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/variation_plans-03.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">7 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/variation_plans-06.png">
+      </div>
+
+      <div class="Slides fade">
+        <div class="numbertext">8 / 8</div>
+        <img class="portimg" src="/images/RSA_ShaTin/160418_cavalier-01.png">
+      </div>
+
+    </div>
+
+    <script>
+      //Make the DIV element draggagle:
+      dragElement(document.getElementById("thun-text"));
+      
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+      
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+      
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+      
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+      </script>
+
+    <script>
+      /* click-thru slideshow */
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Slides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+<!---->
+      <script>
+        function showText() {
+          var x = document.getElementById("thun-text");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+          var element = document.getElementById("i-symbol");
+          element.classList.toggle("portnav-i-symbol-clicked");
+        }
+      </script>
+
+  </body>
+
+</html>
+  
