@@ -205,6 +205,7 @@ background: var(--main-color);
 .projects-target:hover #projects {
     display: block;
 }
+
 /*box overlapping the button*/
 .projects-target, .contact-target {
     margin: none;
@@ -246,7 +247,7 @@ background: var(--main-color);
     width: 250px;
     z-index: 1;
     line-height: 20pt;
-    transition: width 600ms ease;
+    transition: max-width 1s ease-in-out;
 }
 /* Style subnav links */
 .subnav-content a {
@@ -285,6 +286,22 @@ background: var(--main-color);
 
 /* End of Side-Nav, beginning of Portfolio elements*/
 
+
+.frame {
+    height: 100vmax;
+    float: left;
+    width: 100%;
+    margin: none;
+    padding: none;
+    border: none;
+    z-index: 1000;
+}
+
+#portnav-placeholder {
+    padding: none;
+    margin: none;
+    height: 31px;
+}
 
 .portnav-top {
     position: fixed;
