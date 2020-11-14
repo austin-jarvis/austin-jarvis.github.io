@@ -132,7 +132,7 @@ background: var(--main-color);
 /* The nav menu */
 .navbar {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     margin: none;
     padding: none;
     top: 0px;
@@ -163,7 +163,7 @@ background: var(--main-color);
     transform-origin: 60px 60px;
     margin: none;
     padding: none;
-    z-index: 3;
+    z-index: 5;
 }
 
 .subnavbtn {
@@ -213,7 +213,7 @@ background: var(--main-color);
     padding: none;
     background-color: none;
     outline: none;
-    z-index: 5;
+    z-index: 100;
 }
 /*box overlapping the button*/
 .contact-target {
@@ -245,7 +245,7 @@ background: var(--main-color);
     border-right: 1px solid var(--main-color);
     height: 200%;
     width: 250px;
-    z-index: 1;
+    z-index: 3;
     line-height: 20pt;
     transition: max-width 1s ease-in-out;
 }
@@ -280,22 +280,12 @@ background: var(--main-color);
     top: 0px;
     border-right: 1px solid var(--main-color);
     background-color: white;
-    z-index: 1;
+    z-index: 3;
 }
 
 
 /* End of Side-Nav, beginning of Portfolio elements*/
 
-
-.frame {
-    height: 100vmax;
-    float: left;
-    width: 100%;
-    margin: none;
-    padding: none;
-    border: none;
-    z-index: 1000;
-}
 
 #portnav-placeholder {
     padding: none;
@@ -310,7 +300,7 @@ background: var(--main-color);
     top: 0px;
     color: var(--main-color);
     border-bottom: 1px solid var(--main-color);
-    z-index: 1;
+    z-index: 3;
     margin: -1px;
     margin-left: 1px;
     padding-right: 80px;
@@ -324,8 +314,7 @@ background: var(--main-color);
     background-color: white;
     top: 0px;
     border-bottom: 1px solid var(--main-color);
-    background-color: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 .portnav-info {
@@ -342,7 +331,7 @@ background: var(--main-color);
     margin-bottom: -1px;
     border: 1px solid var(--main-color);
     border-left: none;
-    z-index: 2;
+    z-index: 5;
 }
 
 .portnav-next, .portnav-prev {
@@ -354,8 +343,9 @@ background: var(--main-color);
     height: 30px;
     stroke: var(--main-color);
     stroke-width: 1.5px;
-    z-index: 2;
+    z-index: 10;
     border-bottom: 1px solid var(--main-color);
+    outline: none;
 }
 
 .portnav-next {
@@ -380,7 +370,7 @@ background: var(--main-color);
     width: 31px;
     height: 30px;
     top: 220px;
-    z-index: 2;
+    z-index: 10;
     border-bottom: 1px solid var(--main-color);
 }
 
@@ -399,7 +389,6 @@ background: var(--main-color);
     fill: white;
     stroke: none;
     background-color: var(--main-color);
-    z-index: 2;
     outline: none;
 }
 
@@ -412,7 +401,7 @@ background: var(--main-color);
     top: 0px;
     stroke: var(--main-color);
     stroke-width: 1.5px;
-    z-index: 2;
+    z-index: 10;
 }
 
 .project-text {
@@ -428,7 +417,7 @@ background: var(--main-color);
     left: 90px;
     max-width: 820px;
     max-height: 75%;
-    z-index: 0;
+    z-index: 10;
 }
 
 .project-text-close {
@@ -456,6 +445,8 @@ background: var(--main-color);
     height: 85vh;
     margin-top: 30px;
     margin-left: 60px;
+    z-index: 2;
+    position: relative;
 }
 
 .portimg {
@@ -465,19 +456,28 @@ background: var(--main-color);
     padding: none;
 }
 
-.numbertext {
-    position: fixed;
+.portnav-pagination-icons {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+    right: 40px;
+    top: 2px;
+    stroke: var(--main-color);
+    stroke-width: 1.5px;
+    z-index: 10;
+}
+
+.swiper-pagination {
     color: var(--main-color);
     font-size: 10pt;
-    right: 40px;
-    top: 7px;
-    z-index: 1;
     padding: 0px;
     margin: 0px;
 }
 
-.prev, .next {
-    position: inherit
+.swiper-slide {
+    background: none;
 }
 
 @media screen and (max-width: 600px) {
