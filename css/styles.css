@@ -244,7 +244,7 @@ background: var(--main-color);
     border-left: 1px solid var(--main-color);
     border-right: 1px solid var(--main-color);
     height: 200%;
-    width: 250px;
+    width: 260px;
     z-index: 3;
     line-height: 20pt;
     transition: max-width 1s ease-in-out;
