@@ -132,17 +132,18 @@ background: var(--main-color);
 /* The nav menu */
 .navbar {
     position: fixed;
-    z-index: 5;
+    z-index: 10;
     margin: none;
     padding: none;
-    top: 0px;
+    top: 0rem;
+    width: 2rem;
 }
 /* Nav links */
 .navbar a {
     font-size: 10pt;
     color: var(--main-color);
     text-align: center;
-    padding: 10px;
+    padding: 1rem;
     text-decoration: none;
 }
 
@@ -152,7 +153,7 @@ background: var(--main-color);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg) translateX(61px);
     transform-origin: 60px 60px;
-    z-index: 5;
+    z-index: 10;
 }
 
 .rotate-projects {
@@ -163,7 +164,7 @@ background: var(--main-color);
     transform-origin: 60px 60px;
     margin: none;
     padding: none;
-    z-index: 5;
+    z-index: 10;
 }
 
 .subnavbtn {
@@ -173,15 +174,16 @@ background: var(--main-color);
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 31px;
+    height: 2rem;
     white-space: pre;
     border-left: 1px solid;
     color: var(--main-color);
-    padding: 8px;
+    padding: 0.5rem;
     background-color: inherit;
     font-family: inherit;
     font-size: inherit;
     margin: none;
+    z-index: 10;
 }
 /* Format button links on hover */
 .projects-target:hover .subnavbtn {
@@ -199,11 +201,15 @@ background: var(--main-color);
 }
 /* Display submenu on hover */
 .contact-target:hover #contact {
-    display: block;
+    /* display: block; */
+    visibility: visible;
+    margin-left: 2rem;
 }
 /* Display submenu on hover */
 .projects-target:hover #projects {
-    display: block;
+    /* display: block; */
+    visibility: visible;
+    margin-left: 2rem;
 }
 
 /*box overlapping the button*/
@@ -213,50 +219,57 @@ background: var(--main-color);
     padding: none;
     background-color: none;
     outline: none;
-    z-index: 100;
+    z-index: 11;
 }
 /*box overlapping the button*/
 .contact-target {
-    top: 35px;
-    height: 93px;
-    left: 0px;
-    width: 31px;
+    top: 2rem;
+    height: 5rem;
+    left: 0rem;
+    width: 2rem;
 }
 /*box overlapping the button*/
 .projects-target {
-    top: 129px;
-    height: 64px;
-    left: 0px;
-    width: 31px;
+    top: 7.8rem;
+    height: 3rem;
+    left: 0rem;
+    width: 2rem;
 }
 /* Style subnav content (hover submenu) */
 .subnav-content {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    display: block;
     position: fixed;
-    top: -10px;
-    padding-top: 10px;
-    text-indent: 10px;
-    margin-top: 10px;
-    margin-left: 31px;
+    top: -1rem;
+    padding-top: 1rem;
+    text-indent: 1rem;
+    margin-top: 1rem;
+    margin-left: -231px;
     font-size: 14px;
     color: var(--main-color);
     background: white;
     border-left: 1px solid var(--main-color);
     border-right: 1px solid var(--main-color);
     height: 200%;
-    width: 260px;
-    z-index: 5;
+    width: 19rem;
+    z-index: -1;
     line-height: 20pt;
-    transition: max-width 1s ease-in-out;
+    /* -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    # animated transition stuff */
 }
 /* Style subnav links */
 .subnav-content a {
     color: var(--main-color);
     text-decoration: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     padding-left: none;
-    padding-right: 30px;
+    padding-right: 3rem;
     margin: none;
     display: block;
     line-height: 10pt;
@@ -265,7 +278,7 @@ background: var(--main-color);
 }
 /* Indent projects links */
 .projects-target .subnav-content a {
-    padding-left: 30px;
+    padding-left: 1.5rem;
 }
 /* Format on hover */
 .subnav-content a:hover {
@@ -275,12 +288,12 @@ background: var(--main-color);
 
 .navbar-background {
     position: fixed;
-    width: 31px;
+    width: 1.98rem;
     height: 100%;
     top: 0px;
     border-right: 1px solid var(--main-color);
-    background-color: white;
-    z-index: 3;
+    background-color: rgb(255, 255, 255);
+    z-index: 9;
 }
 
 
@@ -300,7 +313,7 @@ background: var(--main-color);
     top: 0px;
     color: var(--main-color);
     /* border-bottom: 1px solid var(--main-color); */
-    z-index: 3;
+    z-index: 5;
     margin: -1px;
     margin-left: 1px;
     padding-right: 80px;
@@ -314,7 +327,7 @@ background: var(--main-color);
     background-color: white;
     top: 0px;
     border-bottom: 1px solid var(--main-color);
-    z-index: 2;
+    z-index: 4;
 }
 
 .portnav-info {
